@@ -1,0 +1,21 @@
+<h1>Secure Content</h1>
+<div *ngIf="IsAuthenticated == false">
+    <p>You must log in before viewing this page.</p>
+</div>
+<div *ngIf="IsAuthenticated == true">
+    <table class="table" *ngIf="UserClaims">
+        <thead>
+            <tr>
+                <th>Claim Type</th>
+                <th>Claim Value</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let claim of UserClaims">
+            <td> {{ claim.claimType }} </td>
+            <td> {{ claim.claimValue }} </td>
+        </tr>
+    </table>
+    <p><a href="https://github.com/sam-wheat/OAuthTest3" target="_blank">Source code for this site can be found here</a></p>
+    <p><a href="https://github.com/sam-wheat/Blog" target="_blank">Portions of this site were copied from this code base</a></p>
+    <p><a href="http://www.samwheat.com" target="_blank">My personal website written in Angular 2</a></p>
+</div>
